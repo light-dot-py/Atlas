@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atlas-corelib"
+version = "0.0.1"
+description = "A powerful ecosystem of modern Python libraries."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+
+authors = [
+{ name = "Atlas Developers" }
+]
+
+keywords = [
+"python",
+"atlas",
+"libraries",
+"ecosystem",
+"tools"
+]
+
+classifiers = [
+"Development Status :: 3 - Alpha",
+"Intended Audience :: Developers",
+"Topic :: Software Development :: Libraries",
+"Operating System :: OS Independent",
+"Programming Language :: Python :: 3",
+"Programming Language :: Python :: 3.10",
+"Programming Language :: Python :: 3.11",
+"Programming Language :: Python :: 3.12"
+]
+
+dependencies = [
+"typing_extensions>=4.8.0"
+]
+
+
+[project.urls]
+Homepage = "https://github.com/light-dot-py/Atlas"
+Repository = "https://github.com/light-dot-py/Atlas"
+Issues = "https://github.com/light-dot-py/Atlas/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["atlas*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+
+[project.optional-dependencies]
+
+dev = [
+  "pytest>=8.0",
+  "pytest-cov>=4.0",
+  "black>=24.0",
+  "ruff>=0.3",
+  "mypy>=1.8"
+]
+
+docs = [
+  "mkdocs>=1.5",
+  "mkdocs-material>=9.5"
+]
+
+math = [
+  "numpy>=1.26"
+]
+
+data = [
+  "pandas>=2.2"
+]
+
+ai = [
+  "scikit-learn>=1.4"
+]
