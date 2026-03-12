@@ -18,7 +18,7 @@
 ## Version 0.0.2
 
 - [x] Modernize `pyproject.toml`
-- [ ] Fix packaging warnings
+- [x] Fix packaging warnings
 - [ ] Improve README documentation
 - [ ] Improve project metadata
 - [ ] Clean project structure
