@@ -22,4 +22,4 @@
 - [x] Improve README documentation
 - [x] Improve project metadata
 - [x] Clean project structure
-- [ ] Release version 0.0.2
+- [x] Release version 0.0.2
