@@ -1,0 +1,13 @@
+pipeline:
+
+  - lint
+  - test
+  - build
+  - docs
+  - roadmap
+  - stats
+  - release
+
+parallel:
+  - docs
+  - stats

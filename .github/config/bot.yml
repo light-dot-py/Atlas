@@ -1,0 +1,19 @@
+bot:
+
+  name: atlas-bot
+
+  commit_author:
+    name: Atlas Bot
+    email: bot@atlas.dev
+
+  auto_commit: true
+
+  auto_pr: false
+
+  responses:
+    issues: true
+    pull_requests: true
+
+  formatting:
+    black: true
+    ruff: true

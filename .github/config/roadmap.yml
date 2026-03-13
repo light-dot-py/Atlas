@@ -1,0 +1,13 @@
+roadmap:
+
+  auto_update: true
+
+  update_on:
+    - commit
+    - merge
+    - release
+
+  sections:
+    - features
+    - fixes
+    - improvements

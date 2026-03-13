@@ -1,0 +1,28 @@
+modules:
+
+  core:
+    enabled: true
+
+  utils:
+    enabled: true
+
+  math:
+    enabled: true
+
+  data:
+    enabled: true
+
+  ai:
+    enabled: false
+
+  graphics:
+    enabled: false
+
+  sound:
+    enabled: false
+
+  crypto:
+    enabled: false
+
+  web:
+    enabled: false

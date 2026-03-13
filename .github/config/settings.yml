@@ -1,0 +1,18 @@
+atlas:
+  name: Atlas
+  package: atlas_corelib
+  python: "3.12"
+
+environment:
+  os: ubuntu-latest
+
+features:
+  ci: true
+  tests: true
+  lint: true
+  build: true
+  docs: true
+  roadmap: true
+  release: true
+  stats: true
+  bot: true

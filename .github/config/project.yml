@@ -1,0 +1,16 @@
+project:
+
+  name: Atlas
+  description: Modern Python ecosystem
+  license: MIT
+  repository: https://github.com/light-dot-py/Atlas
+
+maintainers:
+  - name: Atlas Developers
+
+python:
+  min: "3.10"
+  max: "3.13"
+
+package:
+  name: atlas_corelib

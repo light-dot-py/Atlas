@@ -1,0 +1,12 @@
+release:
+
+  strategy: semver
+
+  auto_tag: true
+
+  publish:
+    pypi: true
+    github: true
+
+  changelog:
+    auto_generate: true

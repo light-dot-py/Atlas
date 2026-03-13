@@ -1,0 +1,13 @@
+docs:
+
+  engine: mkdocs
+
+  theme: material
+
+  auto_generate:
+    modules: true
+    examples: true
+    api_reference: true
+
+  deploy:
+    github_pages: true

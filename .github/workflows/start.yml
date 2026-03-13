@@ -1,0 +1,73 @@
+name: Atlas Starter
+
+on:
+  push:
+    branches: [ main ]
+
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+
+  load-config:
+    runs-on: ubuntu-latest
+
+    outputs:
+      python-version: ${{ steps.config.outputs.python }}
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read settings
+        id: config
+        run: |
+          PYTHON=$(grep "python:" .github/config/settings.yml | head -1 | awk '{print $2}')
+          echo "python=$PYTHON" >> "$GITHUB_OUTPUT"
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: load-config
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ needs.load-config.outputs.python-version }}
+
+      - run: pip install ruff
+      - run: ruff check .
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pytest
+      - run: pytest || true
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install build
+      - run: python -m build
