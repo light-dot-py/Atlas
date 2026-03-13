@@ -8,6 +8,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
 
   load-config:
@@ -24,7 +27,7 @@ jobs:
       - name: Read settings
         id: config
         run: |
-          PYTHON=$(grep "python:" .github/config/settings.yml | head -1 | awk '{print $2}')
+          PYTHON=$(grep "^python:" .github/config/settings.yml | awk '{print $2}')
           echo "python=$PYTHON" >> "$GITHUB_OUTPUT"
 
   lint:
